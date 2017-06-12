@@ -14,24 +14,28 @@ app.get('/', function (req, res) {
   var sess = req.session;
 
   if (sess.authtoken) {
-    res.send('hello world sudah login');
+    var data = {login: "1"};
+    res.render('index.ejs', data);
   } else {
-    res.render('not-login');
+    var data = {login: "0"};
+    res.render('index.ejs', data);
   }
 })
 
 app.get('/callback', function (req,res) {
   var sess = req.session;
-  sess.authtoken = '12345';
-  res.send("sudah dapat token");
+  sess.authtoken = req.query.token;
+  console.log("sudah dapat token=" + sess.authtoken);
+  res.redirect('/');
 });
 
 app.get('/logout', function (req,res) {
   var sess = req.session;
+  sess.authtoken = null;
   req.session.destroy(function(err) {
     // cannot access session here
   })
-  res.send("sudah logout");
+  res.redirect('/');
 });
 
 app.listen(4000, function () {

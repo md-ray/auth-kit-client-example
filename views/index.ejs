@@ -78,9 +78,13 @@
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
-                                <a href="https://authdev.mdray.id/v1/oauth/authorize?client_id=hello&response_type=token" class="btn btn-default btn-lg">
+                                <% if (login == '0') { %>
+                                <a href="https://authdev.mdray.id/v1/oauth/authorize?client_id=helloapp&response_type=token" class="btn btn-default btn-lg">
                                     <img width="300" src="img/telkomsel.png"/>
                                 </a>
+                                <% } else { %>
+                                    Logged in, logout <a href='/logout'>here</a>
+                                <% } %>
                             </li>
                             <!--
                             <li>
