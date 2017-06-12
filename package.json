@@ -1,0 +1,24 @@
+{
+  "name": "auth-kit-client-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saviourcat/auth-kit-client-example.git"
+  },
+  "author": "mdray.id",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saviourcat/auth-kit-client-example/issues"
+  },
+  "homepage": "https://github.com/saviourcat/auth-kit-client-example#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3"
+  }
+}
